@@ -1,0 +1,17 @@
+#include <msx.h>
+#include <stdlib.h>
+#include <graphics.h>
+#include <smartkeys.h>
+
+void main(void)
+{
+  // scan network
+  smartkeys_set_mode();
+  smartkeys_display(NULL,NULL,NULL,NULL,NULL,"  ABORT\n  SCAN");
+  smartkeys_status("  FUJINET IS SCANNING FOR NETWORKS.\n  PLEASE WAIT.");
+  sleep(5);
+
+  // select network
+  smartkeys_display("","",""," RE-SCAN"," ENTER\n SSID","  ABORT\n  SCAN");
+  
+}
