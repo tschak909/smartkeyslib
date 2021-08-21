@@ -16,6 +16,13 @@ static unsigned char _attrs[768] =
    AON,AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,    AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,     AON,AON,AON,AON,AON,    AEN,AEN,AEN,AEN,AEN,AEN   
   };
 
+static unsigned char _attrs_all[768] =
+  {
+   AON,AON,AOK,AOK,AOK,AON,     AEN,AEK,AEK,AEK,AEN,    AON,AOK,AOK,AOK,AON,     AEN,AEK,AEK,AEK,AEN,     AON,AOK,AOK,AOK,AON,    AEN,AEK,AEK,AEK,AEN,AEN,
+   AON,AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,    AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,     AON,AON,AON,AON,AON,    AEN,AEN,AEN,AEN,AEN,AEN,
+   AON,AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,    AON,AON,AON,AON,AON,     AEN,AEN,AEN,AEN,AEN,     AON,AON,AON,AON,AON,    AEN,AEN,AEN,AEN,AEN,AEN   
+  };
+
 /**
  * @brief paint the SmartKeys Attrs onto color RAM
  * @param I true = Paint I SmartKey, false = yellow status instead
@@ -27,9 +34,8 @@ static unsigned char _attrs[768] =
  */
 void smartkeys_attrs(bool I, bool II, bool III, bool IV, bool V, bool VI)
 {
-  // the attributes are statically initialized to visible (true)
-  // For each false parameter, set its attribute area to yellow
-  
+  memcpy(&_attrs,&_attrs_all,768);
+
   if (I==false)
     {
       memset(&_attrs[0],YEL,48);   // Line 1
