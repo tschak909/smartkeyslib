@@ -12,22 +12,22 @@ void smartkeys_caps(unsigned char k)
   switch(k)
     {
     case 1:
-      smartkeys_puts(24,168,"\xf1");
+      smartkeys_puts(24,168,"\x04");
       break;
     case 2:
-      smartkeys_puts(64,168,"\xf2");
+      smartkeys_puts(64,168,"\x05");
       break;
     case 3:
-      smartkeys_puts(104,168,"\xf3");
+      smartkeys_puts(104,168,"\x06");
       break;
     case 4:
-      smartkeys_puts(144,168,"\xf4");
+      smartkeys_puts(144,168,"\x07");
       break;
     case 5:
-      smartkeys_puts(184,168,"\xf5");
+      smartkeys_puts(184,168,"\x08");
       break;
     case 6:
-      smartkeys_puts(224,168,"\xf6");
+      smartkeys_puts(224,168,"\x09");
       break;
     }
 }
