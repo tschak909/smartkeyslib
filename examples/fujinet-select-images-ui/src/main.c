@@ -25,7 +25,7 @@ void main(void)
   // Loading Directory
   smartkeys_display(NULL,NULL,NULL,NULL,NULL," ABORT");
   smartkeys_status("  LOADING DIRECTORY...");
-  /* sleep(5); */
+  sleep(5);
 
   smartkeys_display("    NEW","  COPY\n   TO"," FILTER",NULL,"  BOOT"," ABORT");
    
@@ -43,5 +43,5 @@ void main(void)
   smartkeys_puts(16,88,"Buck Rogers - Planet of Zoom Super Game (1983) (C");
   smartkeys_puts(16,96,"Donkey Kong Super Game (1984) (Coleco).ddp");
   // Selection bar example
-  /* msx_vfill(MODE2_ATTR+256,0x1A,256); */
+  msx_vfill(MODE2_ATTR+256,0x1A,256);
 }
