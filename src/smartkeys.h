@@ -34,9 +34,26 @@ void smartkeys_attrs(bool I, bool II, bool III, bool IV, bool V, bool VI);
  * @brief Write string to VRAM using SmartKeys proportional font
  * @param x Column (0-255)
  * @param y Row (0-191)
- * @param c NULL terminated string to display
+ * @param c character to display
+ * @return width of last character emitted.
  */
-void smartkeys_puts(unsigned char x, unsigned char y, const char *c);
+unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c);
+
+/**
+ * @brief Write string to VRAM using SmartKeys proportional font
+ * @param x Column (0-255)
+ * @param y Row (0-191)
+ * @param c NULL terminated string to display
+ * @return total width of characters emitted. 
+ */
+unsigned char smartkeys_puts(unsigned char x, unsigned char y, const char *c);
+
+/**
+ * @brief calculate total # of horizontal pixels (width) given string *c
+ * @param string of text
+ * @return total # of pixels (0-255) for text.
+ */
+unsigned char smartkeys_puts_width(const char *c);
 
 /**
  * @brief Display text in yellow smartkeys color (for status)
