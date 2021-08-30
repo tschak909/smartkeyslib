@@ -56,6 +56,13 @@ unsigned char smartkeys_puts(unsigned char x, unsigned char y, const char *c);
 unsigned char smartkeys_puts_width(const char *c);
 
 /**
+ * @brief return width of requested character in pixels.
+ * @param character to return. (0-255)
+ * @return width in pixels (0-8)
+ */
+unsigned char smartkeys_putc_width(const char c);
+
+/**
  * @brief Display text in yellow smartkeys color (for status)
  * @param NULL terminated string to display
  */
@@ -71,5 +78,12 @@ void smartkeys_clear(void);
  * @param k keycap # to draw
  */
 void smartkeys_caps(unsigned char k);
+
+/**
+ * @brief patch smartkeys font glyph with new data
+ * @param glyph # to patch
+ * @param 9 bytes of data, first byte length, followed by 8 bytes of bitmap data
+ */
+void smartkeys_patch(unsigned char n, unsigned char l, unsigned char b1, unsigned char b2, unsigned char b3, unsigned char b4, unsigned char b5, unsigned char b6, unsigned char b7, unsigned char b8);   
 
 #endif /* SMARTKEYS_H */
