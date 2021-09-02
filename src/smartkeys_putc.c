@@ -28,7 +28,7 @@ unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c)
     {
       unsigned char b = smartkeys_font[o+i]; // the whole row byte
       
-      for (unsigned char j=0;j<w;j++)
+      for (unsigned short j=0;j<w;j++)
 	{
 	  if (((b & 0x80) == 0x80) && ((x+j) <= 255))
 	    pset(x+j,y+i);
