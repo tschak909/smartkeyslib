@@ -86,4 +86,18 @@ void smartkeys_caps(unsigned char k);
  */
 void smartkeys_patch(unsigned char n, unsigned char l, unsigned char b1, unsigned char b2, unsigned char b3, unsigned char b4, unsigned char b5, unsigned char b6, unsigned char b7, unsigned char b8);   
 
+
+/**
+ * @brief Initialize EOS sound system to use SmartKeys sounds.
+ * @note this must be called before any smartkeys_sound_play() commands.
+ */
+void smartkeys_sound_init(void);
+
+/**
+ * @brief play a sound from the smartkeys table. 
+ * @param the sound number to play (1-9)
+ * @note smartkeys_sound_init() must have been called, prior to using this routine
+ */
+void smartkeys_sound_play(unsigned char n);
+
 #endif /* SMARTKEYS_H */
