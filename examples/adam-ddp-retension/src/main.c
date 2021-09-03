@@ -138,7 +138,7 @@ void retension(unsigned char dev)
     case SMARTKEY_V:
       return;
     case SMARTKEY_VI:
-      eos_hard_init();
+      eos_init();
       break;
     default:
       sound_negative_beep();
