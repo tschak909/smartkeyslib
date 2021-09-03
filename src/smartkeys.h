@@ -3,6 +3,18 @@
 
 #include <stdbool.h>
 
+/* Smartkeys Sound constants */
+
+#define SOUND_TYPEWRITER_CLACK 1
+#define SOUND_CONFIRM 2
+#define SOUND_POSITIVE_CHIME 3
+#define SOUND_OOPS 4
+#define SOUND_DOUBLE_CHIME 5
+#define SOUND_LONG_BEEP 6
+#define SOUND_KEY_PRESS 7
+#define SOUND_NEGATIVE_BUZZ 8
+#define SOUND_MODE_CHANGE 9
+
 /**
  * Set SmartKeys mode and palette
  */
