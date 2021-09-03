@@ -15,7 +15,7 @@ extern unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char
  * @param y Row (0-191)
  * @param c NULL terminated string to display
  */
-unsigned char smartkeys_puts(unsigned char x, unsigned char y, const char *c)
+unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c)
 {
   unsigned char oldx=x;
   unsigned char w;
@@ -30,11 +30,16 @@ unsigned char smartkeys_puts(unsigned char x, unsigned char y, const char *c)
 	  c++;
 	  continue;
 	}
-      
+
       w = smartkeys_putc(x,y,*c);
 
-      x += w; // Move X right by width pixels
-      c++; // advance to next char;
+      if ((x + w) < 255)
+	{
+	  x += w; // Move X right by width pixels
+	  c++; // advance to next char;
+	}
+      else
+	return 0;
     }
   return w;
 }

@@ -30,6 +30,9 @@ unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c)
       
       for (unsigned short j=0;j<w;j++)
 	{
+	  if ((x+j) > 255)
+	    continue;
+	  
 	  if (((b & 0x80) == 0x80) && ((x+j) <= 255))
 	    pset(x+j,y+i);
 	  

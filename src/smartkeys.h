@@ -46,7 +46,7 @@ unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c);
  * @param c NULL terminated string to display
  * @return total width of characters emitted. 
  */
-unsigned char smartkeys_puts(unsigned char x, unsigned char y, const char *c);
+unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c);
 
 /**
  * @brief calculate total # of horizontal pixels (width) given string *c
