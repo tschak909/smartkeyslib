@@ -34,11 +34,9 @@ static unsigned short soundTable[32];
 
 static void nmi_play(void)
 {
-  M_PRESERVE_MAIN;
-  M_PRESERVE_INDEX;
+  M_PRESERVE_ALL;
   eos_play_sound();
-  M_RESTORE_INDEX;
-  M_RESTORE_MAIN;
+  M_RESTORE_ALL;
 }
 
 void smartkeys_sound_init(void)
