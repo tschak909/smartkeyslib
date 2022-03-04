@@ -3,6 +3,8 @@ TARGET_EXEC ?= smartkeys
 BUILD_DIR ?= ./build
 SRC_DIRS ?= ./src
 
+EOS_DIR ?= ../eoslib/src
+
 CC=zcc
 AS=z88dk-z80asm
 
@@ -22,7 +24,7 @@ $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 # c source
 $(BUILD_DIR)/%.c.o: %.c
 	$(MKDIR_P) $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -I$(EOS_DIR) -c $< -o $@
 
 .PHONY: clean
 
