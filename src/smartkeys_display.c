@@ -5,7 +5,7 @@
  * @brief Display smartkeys
  * @param I   Text for the I keycap, NULL = YELLOW.
  * @param II  Text for the II keycap, NULL = YELLOW.
- * @apram III Text for the III keycap, NULL = YELLOW.
+ * @param III Text for the III keycap, NULL = YELLOW.
  * @param IV  Text for the IV keycap, NULL = YELLOW.
  * @param V   Text for the V keycap, NULL = YELLOW.
  * @param VI  Text for the VI keycap, NULL = YELLOW.
