@@ -84,6 +84,13 @@ unsigned char check_tape_inserted(unsigned char dev)
     }
 }
 
+void rewind(unsigned char dev)
+{
+  dcb=eos_find_dcb(dev);
+  dcb->block=0;
+  dcb->status=2;
+}
+
 void retension(unsigned char dev)
 {
   sound_chime();
@@ -124,8 +131,8 @@ void retension(unsigned char dev)
   eos_read_block(dev,end_block,block);
 
   sound_confirm();
-  update_status("  RETENSIONING TAPE BACK TO BLOCK 0.\n  PLEASE WAIT");
-  eos_read_block(dev,0x00,block);
+  update_status("  RETENSIONING TAPE BACK TO BEGINNING.\n  PLEASE WAIT");
+  rewind(dev);
   
   sound_chime();
   smartkeys_display(NULL,NULL,NULL,NULL,"ANOTHER\n  TAPE"," REBOOT");
