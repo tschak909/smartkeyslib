@@ -26,7 +26,18 @@ $(BUILD_DIR)/%.c.o: %.c
 	$(MKDIR_P) $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -I$(EOS_DIR) -c $< -o $@
 
-.PHONY: clean
+.PHONY: install check clean
+
+install: smartkeys.lib
+	install src/smartkeys.h /usr/local/share/z88dk/include/
+	install smartkeys.lib /usr/local/share/z88dk/lib/
+
+check:
+	$(MAKE) -C examples/adam-ddp-retension
+	$(MAKE) -C examples/adam-smartkeys
+	$(MAKE) -C examples/adam-smartkeys-sounds
+	$(MAKE) -C examples/fujinet-scan-network-ui
+	$(MAKE) -C examples/fujinet-select-images-ui
 
 clean:
 	$(RM) -r smartkeys.lib $(BUILD_DIR)
