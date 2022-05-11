@@ -39,7 +39,12 @@ unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c)
 	  c++; // advance to next char;
 	}
       else
-	return 0;
+	{
+	  x = oldx;
+	  y += 8;
+	  c++;
+	}
     }
+  
   return w;
 }
