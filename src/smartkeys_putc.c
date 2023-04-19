@@ -34,7 +34,7 @@ unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c)
 	    continue;
 	  
 	  if (((b & 0x80) == 0x80) && ((x+j) <= 255))
-	    pset(x+j,y+i);
+	    plot(x+j,y+i);
 	  
 	  b <<= 1; // shift next bit to leftmost.
 	}

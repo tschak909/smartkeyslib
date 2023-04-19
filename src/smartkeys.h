@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 
+
 /* Smartkeys Sound constants */
 
 #define SOUND_TYPEWRITER_CLACK 1
