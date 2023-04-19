@@ -11,8 +11,8 @@
 
 void select(int n)
 {
-  msx_vfill(0x2000,0x17,5376);
-  msx_vfill(0x2000+(n*512),0xF5,256);
+  msx_fill(0x2000,0x17,5376);
+  msx_fill(0x2000+(n*512),0xF5,256);
 }
 
 void main(void)
