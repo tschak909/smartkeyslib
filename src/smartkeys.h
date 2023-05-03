@@ -16,6 +16,13 @@
 #define SOUND_NEGATIVE_BUZZ 8
 #define SOUND_MODE_CHANGE 9
 
+#define SMARTKEY_I 0x81
+#define SMARTKEY_II 0x82
+#define SMARTKEY_III 0x83
+#define SMARTKEY_IV 0x84
+#define SMARTKEY_V 0x85
+#define SMARTKEY_VI 0x86
+
 /**
  * Set SmartKeys mode and palette
  */
