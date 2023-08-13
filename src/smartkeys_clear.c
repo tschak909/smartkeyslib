@@ -5,5 +5,5 @@
  */
 void smartkeys_clear(void)
 {
-  msx_fill(0x1500,0x00,768);
+  msx_vfill(0x1500,0x00,768);
 }
