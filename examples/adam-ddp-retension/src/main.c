@@ -89,6 +89,7 @@ void rewind(unsigned char dev)
   dcb=eos_find_dcb(dev);
   dcb->block=0;
   dcb->status=2;
+  while (dcb->status<0x80);
 }
 
 void retension(unsigned char dev)
@@ -122,10 +123,6 @@ void retension(unsigned char dev)
       while (check_tape_inserted(dev) == 0) { }
     }
   
-  sound_confirm();
-  update_status("  RETENSIONING TAPE TO BEGINNING.\n  PLEASE WAIT");
-  eos_read_block(dev,begin_block,block);
-
   sound_confirm();
   update_status("  RETENSIONING TAPE TO END.\n  PLEASE WAIT");
   eos_read_block(dev,end_block,block);
@@ -165,8 +162,9 @@ void main(void)
   eos_request_device_status(TAPE_2,dcb);
   tape_2_enabled = (eos_get_device_status(TAPE_2) & 0x7f) != 0x40;
   
-  smartkeys_puts(80,88,"DDP RETENSION TOOL\n");
-
+  smartkeys_puts(80,88,"DDP RETENSION TOOL");
+  smartkeys_puts(80,96,"   VERSION 1.1");
+  
   while (1)
     {
       sound_mode_change();
