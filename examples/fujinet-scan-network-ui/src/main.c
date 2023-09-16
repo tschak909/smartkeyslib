@@ -1,4 +1,4 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <graphics.h>
@@ -9,10 +9,10 @@ void main(void)
   smartkeys_set_mode();
   
   // Welcome To Fujinet
-  msx_color(15,4,7);
-  msx_fill(MODE2_ATTR,0xF4,256);
-  msx_fill(MODE2_ATTR+256,0x1F,4864);
-  msx_fill(MODE2_ATTR+4864,0xF4,256);
+  vdp_color(15,4,7);
+  vdp_vfill(MODE2_ATTR,0xF4,256);
+  vdp_vfill(MODE2_ATTR+256,0x1F,4864);
+  vdp_vfill(MODE2_ATTR+4864,0xF4,256);
   
   gotoxy(6,0); cputs("WELCOME TO #FUJINET!\n");
   gotoxy(0,19); cputs("MAC:        00:1C:3D:44:F4:5C:03");
@@ -29,11 +29,11 @@ void main(void)
   // Left side blue
   for (int i=0;i<19;i++)
     {
-      msx_fill(MODE2_ATTR+(i<<8),0xF4,16);
+      vdp_vfill(MODE2_ATTR+(i<<8),0xF4,16);
     }
   
   // Numbers
-  msx_color(15,4,7);
+  vdp_color(15,4,7);
   for (int i=0;i<8;i++)
     {
       char tmp[3];
@@ -42,7 +42,7 @@ void main(void)
     }
 
   // Networks
-  msx_color(1,15,7);
+  vdp_color(1,15,7);
   smartkeys_puts(16,  8,"\x80\x81\x82"); smartkeys_puts(40,8,"CHERRYHOMES");
   smartkeys_puts(16, 16,"\x80\x81");     smartkeys_puts(40,16,"NEIGHBOR-DAN");
   smartkeys_puts(16, 24,"\x80\x81");     smartkeys_puts(40,24,"LINKSYS");
@@ -53,5 +53,5 @@ void main(void)
   smartkeys_puts(16, 63,"\x80");         smartkeys_puts(40,63,"RIGHTMEOW");
 
   // Selection bar example
-  msx_fill(MODE2_ATTR+256,0x1A,256);
+  vdp_vfill(MODE2_ATTR+256,0x1A,256);
 }

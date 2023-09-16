@@ -4,15 +4,15 @@
  */
 
 #include <stdlib.h>
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <eos.h>
 #include <smartkeys.h>
 #include <conio.h>
 
 void select(int n)
 {
-  msx_fill(0x2000,0x17,5376);
-  msx_fill(0x2000+(n*512),0xF5,256);
+  vdp_vfill(0x2000,0x17,5376);
+  vdp_vfill(0x2000+(n*512),0xF5,256);
 }
 
 void main(void)

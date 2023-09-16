@@ -2,7 +2,7 @@
  * smartkeys_puts.c - Put text using SmartKeys proportional font
  */
 
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <graphics.h>
 #include <conio.h>
 

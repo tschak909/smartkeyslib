@@ -1,4 +1,4 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <graphics.h>
 #include <conio.h>
   
@@ -7,7 +7,7 @@
  */
 void smartkeys_set_mode(void)
 {
-  msx_set_mode(2);
-  msx_color(1,7,7);
+  vdp_set_mode(2);
+  vdp_color(1,7,7);
   clrscr();
 }

@@ -3,7 +3,7 @@
  * @note this must be called before any smartkeys_sound_play() commands.
  */
 
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <eos.h>
 #include <intrinsic.h>
 #include <interrupt.h>

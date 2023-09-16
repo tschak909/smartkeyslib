@@ -1,4 +1,4 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -79,5 +79,5 @@ void smartkeys_attrs(bool I, bool II, bool III, bool IV, bool V, bool VI)
     }
 
   // Paint the resulting attributes
-  msx_vwrite(&_attrs,MODE2_ATTR+5376,sizeof(_attrs));
+  vdp_vwrite(&_attrs,MODE2_ATTR+5376,sizeof(_attrs));
 }

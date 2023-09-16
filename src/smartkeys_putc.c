@@ -2,7 +2,7 @@
  * smartkeys_putc.c - Put a character using SmartKeys proportional font
  */
 
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <graphics.h>
 
 extern unsigned char smartkeys_font[];

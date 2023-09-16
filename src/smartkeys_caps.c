@@ -1,4 +1,4 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 #include "smartkeys.h"
 
 /**
@@ -7,7 +7,7 @@
  */
 void smartkeys_caps(unsigned char k)
 {
-  msx_color(15,1,7);
+  vdp_color(15,1,7);
 
   switch(k)
     {

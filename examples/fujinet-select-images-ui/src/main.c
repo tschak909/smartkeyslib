@@ -9,17 +9,17 @@ void main(void)
   smartkeys_set_mode();
   
   // Welcome To Fujinet
-  msx_color(15,4,7);
-  msx_fill(MODE2_ATTR,0xF4,256);
-  msx_fill(MODE2_ATTR+256,0x1F,4864);
-  msx_fill(MODE2_ATTR+4864,0xF4,256);
+  vdp_color(15,4,7);
+  vdp_vfill(MODE2_ATTR,0xF4,256);
+  vdp_vfill(MODE2_ATTR+256,0x1F,4864);
+  vdp_vfill(MODE2_ATTR+4864,0xF4,256);
 
   smartkeys_puts(8,0,"");
 
   // Left side blue
   for (int i=0;i<19;i++)
     {
-      msx_fill(MODE2_ATTR+(i<<8),0xF4,16);
+      vdp_vfill(MODE2_ATTR+(i<<8),0xF4,16);
     }
   
   // Loading Directory
@@ -30,7 +30,7 @@ void main(void)
   smartkeys_display("    NEW","  COPY\n   TO"," FILTER",NULL,"  BOOT"," ABORT");
    
   // Networks
-  msx_color(1,15,7);
+  vdp_color(1,15,7);
   smartkeys_puts(16, 8,"Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
   smartkeys_puts(16,16,"Nullam vulputate, ex in dapibus rhoncus, nisl nulla");
   smartkeys_puts(16,24,"leo, ac tincidunt risus metus non arcu. Etiam posuere");
@@ -43,5 +43,5 @@ void main(void)
   smartkeys_puts(16,88,"Buck Rogers - Planet of Zoom Super Game (1983) (C");
   smartkeys_puts(16,96,"Donkey Kong Super Game (1984) (Coleco).ddp");
   // Selection bar example
-  msx_fill(MODE2_ATTR+256,0x1A,256);
+  vdp_vfill(MODE2_ATTR+256,0x1A,256);
 }

@@ -1,9 +1,9 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 
 /**
  * @brief clear the bitmap for the smartkeys area
  */
 void smartkeys_clear(void)
 {
-  msx_vfill(0x1500,0x00,768);
+  vdp_vfill(0x1500,0x00,768);
 }

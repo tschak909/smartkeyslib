@@ -1,4 +1,4 @@
-#include <msx.h>
+#include <video/tms99x8.h>
 #include "smartkeys.h"
 
 /**
@@ -22,44 +22,44 @@ void smartkeys_display(const char *I, const char *II, const char *III, const cha
   if (I != NULL)
     {
       smartkeys_caps(1);
-      msx_color(15,5,0x77);
+      vdp_color(15,5,0x77);
       smartkeys_puts(0,176,I);
     }
 
   if (II != NULL)
     {
       smartkeys_caps(2);
-      msx_color(15,4,0x77);
+      vdp_color(15,4,0x77);
       smartkeys_puts(48,176,II);
     }
 
   if (III != NULL)
     {
       smartkeys_caps(3);
-      msx_color(15,5,0x77);
+      vdp_color(15,5,0x77);
       smartkeys_puts(88,176,III);
     }
 
   if (IV != NULL)
     {
       smartkeys_caps(4);
-      msx_color(15,4,0x77);
+      vdp_color(15,4,0x77);
       smartkeys_puts(128,176,IV);
     }
 
   if (V != NULL)
     {
       smartkeys_caps(5);
-      msx_color(15,5,0x77);
+      vdp_color(15,5,0x77);
       smartkeys_puts(168,176,V);
     }
 
   if (VI != NULL)
     {
       smartkeys_caps(6);
-      msx_color(15,4,0x77);
+      vdp_color(15,4,0x77);
       smartkeys_puts(208,176,VI);
     }
 
-  msx_color(1,0x77,0x77);
+  vdp_color(1,0x77,0x77);
 }

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
-#include <msx.h>
+#include <video/tms99x8.h>
 #include <eos.h>
 #include <smartkeys.h>
 
