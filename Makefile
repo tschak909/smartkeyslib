@@ -13,12 +13,12 @@ OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d)
 
 CFLAGS=+coleco -subtype=adam
-LDFLAGS=-xsmartkeys
+LDFLAGS=-x$(TARGET_EXEC)
 
 INC_DIRS := $(shell find $(SRC_DIRS) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-$(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
+$(TARGET_EXEC).lib: $(OBJS)
 	$(AS) $(LDFLAGS) $(OBJS)
 
 # c source
@@ -28,9 +28,9 @@ $(BUILD_DIR)/%.c.o: %.c
 
 .PHONY: install check clean
 
-install: smartkeys.lib
-	install src/smartkeys.h /usr/local/share/z88dk/include/
-	install smartkeys.lib /usr/local/share/z88dk/lib/
+install: $(TARGET_EXEC).lib
+	install $(SRC_DIRS)/smartkeys.h /usr/local/share/z88dk/include/
+	install $(TARGET_EXEC).lib /usr/local/share/z88dk/lib/
 
 check:
 	$(MAKE) -C examples/adam-ddp-retension
@@ -40,7 +40,7 @@ check:
 	$(MAKE) -C examples/fujinet-select-images-ui
 
 clean:
-	$(RM) -r smartkeys.lib $(BUILD_DIR)
+	$(RM) -r $(TARGET_EXEC).lib $(BUILD_DIR)
 
 -include $(DEPS)
 
