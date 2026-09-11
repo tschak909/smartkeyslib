@@ -18,10 +18,10 @@ extern unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char
 unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c)
 {
   unsigned char oldx=x;
-  unsigned char w;
+  unsigned char w=0;
   
   // map ASCII to appropriate character
-  while (*c != NULL)
+  while (*c != '\0')
     {      
       if (*c == '\n')
 	{
@@ -33,7 +33,7 @@ unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c)
 
       w = smartkeys_putc(x,y,*c);
 
-      if ((x + w) < 255)
+      if ((x + w) <= 255)
 	{
 	  x += w; // Move X right by width pixels
 	  c++; // advance to next char;

@@ -13,5 +13,5 @@ extern unsigned char smartkeys_font[];
  */
 unsigned char smartkeys_putc_width(const char c)
 {
-  return smartkeys_font[c*9];
+  return smartkeys_font[(unsigned char)c * 9];
 }

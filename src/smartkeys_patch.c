@@ -13,7 +13,12 @@ extern unsigned char smartkeys_font[];
  */
 void smartkeys_patch(unsigned char n, unsigned char l, unsigned char b1, unsigned char b2, unsigned char b3, unsigned char b4, unsigned char b5, unsigned char b6, unsigned char b7, unsigned char b8)
 {
-  unsigned char *p = &smartkeys_font[n*9];
+  unsigned char *p;
+
+  if (n >= 128)
+    return;
+
+  p = &smartkeys_font[n*9];
 
   p[0]=l;
   p[1]=b1;

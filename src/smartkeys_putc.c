@@ -20,7 +20,7 @@ unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char c)
   unsigned short o;  // offset 
   unsigned char w;   // width
       
-  o = c*9;
+  o = (unsigned char)c * 9;
   
   w = smartkeys_font[o++]; // First byte is width, also increment past it.
 
