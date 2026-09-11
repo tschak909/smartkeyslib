@@ -8,7 +8,7 @@ EOS_DIR ?= ../eoslib/src
 CC = zcc
 AS = z88dk-z80asm
 
-SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
+SRCS := $(shell find $(SRC_DIRS) \( -name '*.cpp' -o -name '*.c' -o -name '*.s' \))
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d)
 

@@ -15,8 +15,11 @@ unsigned char smartkeys_puts_width(const char *c)
 {
   int total_width=0;
   
-  while (*c != NULL)
-    total_width += smartkeys_font[((*c)*9)];
+  while (*c != '\0')
+    {
+      total_width += smartkeys_font[(*c)*9];
+      c++;
+    }
 
   return (total_width > 255 ? 255 : total_width);
 }
