@@ -17,7 +17,7 @@ extern unsigned char smartkeys_putc(unsigned char x, unsigned char y, const char
  */
 unsigned char smartkeys_puts(unsigned short x, unsigned char y, const char *c)
 {
-  unsigned char oldx=x;
+  unsigned short oldx=x;
   unsigned char w=0;
   
   // map ASCII to appropriate character
